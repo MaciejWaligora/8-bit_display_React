@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Display from "./components/8_bit_display/display";
 
 function App() {
+  let [state, changeState] = useState(0);
+  let display = (e) => {
+    changeState(parseFloat(e.target.value));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Display value={state} width={200} theme="apollo"></Display>
+      <input
+        min="0.0"
+        max="10"
+        step="0.1"
+        type="range"
+        onChange={display}
+        defaultValue={"0.0"}
+      ></input>
+      <Display value={36534} width={300} theme="apollo"></Display>
+      <Display value={36534} width={45} theme="electronic"></Display>
     </div>
   );
 }
