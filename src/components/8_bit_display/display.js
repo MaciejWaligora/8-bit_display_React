@@ -2,7 +2,6 @@ import React from "react";
 import Digit from "./digit";
 
 export default function Display({ width = 32, value, theme }) {
-  console.log(value);
   let parseValue = (val) => {
     let arr = val.toString().split("");
     for (let [i, char] of arr.entries()) {
