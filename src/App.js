@@ -22,7 +22,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Display value={state[0]} width={100} theme="apollo"></Display>
+      <Display value={state[0]} width={20} theme="apollo"></Display>
       <input
         min="0.0"
         max="10"
